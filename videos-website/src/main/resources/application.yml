@@ -9,8 +9,8 @@ files:
 spring:
   datasource:
     url: jdbc:mysql://47.113.188.125:3306/videos_website?characterEncoding=utf-8&serverTimezone=UTC
-    username: root
-    password: 8472554Lcy
+    username: ****
+    password: ****
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -25,9 +25,9 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
   redis:
-    host: 47.113.188.125
+    host: ****
     port: 6379
-    password: 8472554Lcy
+    password: ****
 
   servlet:
     multipart:
