@@ -52,4 +52,18 @@ public interface UserService {
      * @return 操作结果
      */
     Result updateNickname(String nickName);
+
+    /**
+     * 进行用户封禁操作
+     * @param id
+     * @return
+     */
+    Result block(Long id);
+
+    /**
+     * 进行用户解封操作
+     * @param id
+     * @return
+     */
+    Result unblock(Long id);
 }

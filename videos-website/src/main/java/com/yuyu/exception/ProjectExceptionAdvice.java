@@ -44,7 +44,7 @@ public class ProjectExceptionAdvice {
     public Result doException(AuthenticationException exception){
         // 记录日志
         log.error(exception.getMessage());
-        return new Result(Code.AUTHENTICATION_ERROR,"账号或者密码错误,请重试！");
+        return new Result(Code.AUTHENTICATION_ERROR,exception.getMessage());
     }
 
     @ExceptionHandler(AccessDeniedException.class)

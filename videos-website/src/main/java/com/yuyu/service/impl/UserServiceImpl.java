@@ -200,5 +200,38 @@ public class UserServiceImpl implements UserService {
         return new Result(Result.PROJECT_SUCCESS,"success",userDO);
     }
 
+    @Override
+    public Result block(Long id) {
+        User user = userDao.selectById(id);
+        if(Objects.isNull(user)){
+            throw  new BussinessException(Code.PROJECT_BUSSINESS_ERROR,"传入id用户不存在");
+        }
+
+        int i = userDao.deleteById(user);
+        log.info("用户"+id+"数据已修改");
+        if(i==0){
+            throw new BussinessException(Code.PROJECT_BUSSINESS_ERROR,"操作失败，请稍后重试");
+        }else {
+            return new Result(Result.PROJECT_SUCCESS,"success");
+        }
+    }
+
+    @Override
+    public Result unblock(Long id) {
+        User user = userDao.getUserDeletedById(id);
+        if(Objects.isNull(user)){
+            throw new BussinessException(Code.PROJECT_BUSSINESS_ERROR,"该用户未被封禁");
+        }
+
+        int i = userDao.updateUserDeleteById(id);
+        log.info("用户"+id+"数据已修改");
+        if(i==0){
+            throw new BussinessException(Code.PROJECT_BUSSINESS_ERROR,"操作失败，请稍后重试");
+        }else {
+
+            return new Result(Result.PROJECT_SUCCESS,"success");
+        }
+    }
+
 
 }

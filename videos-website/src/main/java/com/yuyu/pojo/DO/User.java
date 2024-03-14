@@ -2,6 +2,7 @@ package com.yuyu.pojo.DO;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.validation.annotation.Validated;
@@ -28,6 +29,10 @@ public class User implements Serializable {
     private String userName;
 
     private String nickName;
+
+    @TableLogic
+    @JsonIgnore
+    private Integer deleted;
 
     @JsonIgnore
     private String password;
@@ -134,11 +139,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(Long id, Long rid, String userName, String nickName, String password, String avatarUrl, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt) {
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
+
+    public User(Long id, Long rid, String userName, String nickName, Integer deleted, String password, String avatarUrl, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt) {
         this.id = id;
         this.rid = rid;
         this.userName = userName;
         this.nickName = nickName;
+        this.deleted = deleted;
         this.password = password;
         this.avatarUrl = avatarUrl;
         this.createdAt = createdAt;

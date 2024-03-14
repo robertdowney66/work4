@@ -89,4 +89,29 @@ public class UserController {
     public Result updateNickname(@RequestParam("nickname") String nickName){
         return userService.updateNickname(nickName);
     }
+
+    /**
+     * 进行封禁用户的操作
+     * @param id
+     * @return
+     */
+    @PostMapping("/block")
+    @PreAuthorize("hasAnyAuthority('control:block:user')")
+    public Result block(@RequestParam("user_id") Long id){
+        return userService.block(id);
+    }
+    /**
+     * 进行解封用户的操作
+     * @param id
+     * @return
+     */
+    @PostMapping("/unblock")
+    @PreAuthorize("hasAnyAuthority('control:unblock:user')")
+    public Result unblock(@RequestParam("user_id") Long id){
+        return userService.unblock(id);
+    }
+
+
+
+
 }
