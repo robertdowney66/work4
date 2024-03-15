@@ -17,9 +17,9 @@ public class InteractController {
 
     /**
      * 获取发表评论的参数，传入service层
-     * @param videoId
-     * @param commentId
-     * @param content
+     * @param videoId 视频id
+     * @param commentId 评论id
+     * @param content 评论内容
      * @return 操作结果
      */
     @PostMapping("/comment/publish")
@@ -32,10 +32,10 @@ public class InteractController {
 
     /**
      * 获取获得评论列表的参数，传入service层
-     * @param videoId
-     * @param commentId
-     * @param pageNum
-     * @param pageSize
+     * @param videoId 视频id
+     * @param commentId 评论id
+     * @param pageNum 页面页码
+     * @param pageSize 页面数据条数
      * @return 操作结果
      */
     @GetMapping("/comment/list")
@@ -49,8 +49,8 @@ public class InteractController {
 
     /**
      * 获取删除评论的参数，传入service层
-     * @param videoId
-     * @param commentId
+     * @param videoId 视频id
+     * @param commentId 评论id
      * @return  操作结果
      */
     @DeleteMapping ("/comment/delete")
@@ -62,9 +62,9 @@ public class InteractController {
 
     /**
      * 获取点赞操作的参数，传入service层
-     * @param videoId
-     * @param commentId
-     * @param type
+     * @param videoId 视频id
+     * @param commentId 评论id
+     * @param type 操作类型 点赞-1 不点赞-2
      * @return 操作结果
      */
     @PostMapping("/like/action")
@@ -77,9 +77,9 @@ public class InteractController {
 
     /**
      * 获取点赞了列表的参数，传入service层
-     * @param userid
-     * @param pageSize
-     * @param pageNum
+     * @param userid 用户id
+     * @param pageSize 页面数据条数
+     * @param pageNum 页面页码
      * @return 操作结果
      */
     @GetMapping("/like/list")

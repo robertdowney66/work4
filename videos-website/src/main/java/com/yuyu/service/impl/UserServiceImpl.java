@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
         redisCache.setCacheObject("login:"+userid,loginUser);
         log.info("用户:"+userid+":已存入redis");
 
-        return new Result<>(200,"登录成功",map);
+        return new Result<>(Result.PROJECT_SUCCESS,"success",map);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
         redisCache.deleteObject("login:"+id);
         log.info("用户:"+id+":已从redis删除");
 
-        return new Result<>(200,"注销成功");
+        return new Result<>(Result.PROJECT_SUCCESS,"success");
     }
 
     @Override

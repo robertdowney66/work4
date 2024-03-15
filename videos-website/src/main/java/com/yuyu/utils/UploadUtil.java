@@ -33,8 +33,8 @@ public class UploadUtil {
 
         // 地域节点
         String endpoint = "http://oss-cn-fuzhou.aliyuncs.com";
-        String accessKeyId = "****";
-        String accessKeySecret = "****";
+        String accessKeyId = "LTAI5tJwc9Y6MqKmmrfniYkp";
+        String accessKeySecret = "A8aQREKIfWNIWfaCcIPSF7uG3btzoL";
         // OSS客户端对象
         OSS ossclient = new OSSClientBuilder().build(endpoint,accessKeyId,accessKeySecret);
         ossclient.putObject(

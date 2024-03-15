@@ -24,8 +24,8 @@ public class UserController {
 
     /**
      * 接受登录时参数，传输给service层
-     * @param userName
-     * @param password
+     * @param userName 用户账号
+     * @param password 用户密码
      * @return 操作结果
      */
     @PostMapping("/login")
@@ -46,8 +46,8 @@ public class UserController {
 
     /**
      * 接受注册时参数，传输给service层
-     * @param userName
-     * @param password
+     * @param userName 用户账号
+     * @param password 密码密码
      * @return 操作结果
      */
     @PostMapping("/register")
@@ -58,8 +58,8 @@ public class UserController {
 
     /**
      * 接受查询指定用户时参数，传输给service层
-     * @param id
-     * @return
+     * @param id 用户id
+     * @return 操作结果
      */
     @GetMapping("/info")
     @PreAuthorize("hasAnyAuthority('normal:info')")
@@ -69,8 +69,8 @@ public class UserController {
 
     /**
      * 接受更新头像时参数，传输给service层
-     * @param file
-     * @return
+     * @param file 上传文件 应该为jpg/jepg/png
+     * @return 操作结果
      * @throws IOException 操作结果
      */
     @PutMapping("/avatar/upload")
@@ -81,7 +81,7 @@ public class UserController {
 
     /**
      * 接受修改昵称时的参数，传输给service层
-     * @param nickName
+     * @param nickName 用户昵称
      * @return 操作结果
      */
     @PutMapping("/nickname")
@@ -92,8 +92,8 @@ public class UserController {
 
     /**
      * 进行封禁用户的操作
-     * @param id
-     * @return
+     * @param id 用户id
+     * @return 操作结果
      */
     @PostMapping("/block")
     @PreAuthorize("hasAnyAuthority('control:block:user')")
@@ -102,8 +102,8 @@ public class UserController {
     }
     /**
      * 进行解封用户的操作
-     * @param id
-     * @return
+     * @param id 用户id
+     * @return 操作结果
      */
     @PostMapping("/unblock")
     @PreAuthorize("hasAnyAuthority('control:unblock:user')")

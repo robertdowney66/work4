@@ -20,8 +20,8 @@ public class SocialController {
 
     /**
      * 接收关注操作的参数，传入service层
-     * @param userId
-     * @param type
+     * @param userId 用户id
+     * @param type 操作类型 点赞-1 取消点赞-2
      * @return 操作结果
      */
     @PostMapping("/relation/action")
@@ -33,9 +33,9 @@ public class SocialController {
 
     /**
      * 接收获取粉丝列表的参数，传入service层
-     * @param userId
-     * @param pageNum
-     * @param pageSize
+     * @param userId 用户id
+     * @param pageNum 页面页码
+     * @param pageSize 页面数据数量
      * @return 操作结果
      */
     @GetMapping ("/follower/list")
@@ -48,9 +48,9 @@ public class SocialController {
 
     /**
      * 接收获取关注列表的参数，传入service层
-     * @param userId
-     * @param pageNum
-     * @param pageSize
+     * @param userId 用户id
+     * @param pageNum 页面页码
+     * @param pageSize 页面数据条数
      * @return 操作结果
      */
     @GetMapping ("/following/list")
@@ -63,8 +63,8 @@ public class SocialController {
 
     /**
      * 接收获取好友列表的参数，传入service层
-     * @param pageNum
-     * @param pageSize
+     * @param pageNum 页面页码
+     * @param pageSize 页面数据条数
      * @return 操作结果
      */
     @GetMapping("/friends/list")

@@ -21,9 +21,9 @@ public class VideoController {
 
     /**
      * 接收视频发布时参数，传递给service层
-     * @param data
-     * @param title
-     * @param description
+     * @param data 上传视频
+     * @param title 视频标题
+     * @param description 视频描述
      * @return 操作结果
      * @throws IOException
      */
@@ -35,7 +35,7 @@ public class VideoController {
 
     /**
      * 接收接受视频点击时参数，传递给service层
-     * @param id
+     * @param id 视频id
      * @return 操作结果
      */
     @PostMapping("/click")
@@ -46,8 +46,8 @@ public class VideoController {
 
     /**
      * 用于接受热度排行所需参数，传递给service层
-     * @param pageSize
-     * @param pageNum
+     * @param pageSize 页面数据条数
+     * @param pageNum 页面页码
      * @return 操作结果
      */
     @GetMapping("/popular")
@@ -61,9 +61,9 @@ public class VideoController {
 
     /**
      * 用于接收查询视频列表所需参数，传递给servcie层
-     * @param userId
-     * @param pageNum
-     * @param pageSize
+     * @param userId 用户id
+     * @param pageNum 页面页码
+     * @param pageSize 页面数据条数
      * @return 操作结果
      */
     @GetMapping("/list")
@@ -77,12 +77,12 @@ public class VideoController {
 
     /**
      * 用于接收搜索时所需参数，传递给service层
-     * @param keywords
-     * @param pageSize
-     * @param pageNum
-     * @param fromDate
-     * @param toDate
-     * @param userName
+     * @param keywords 关键字
+     * @param pageSize 页面数据条数
+     * @param pageNum 页面页码
+     * @param fromDate 开始日期
+     * @param toDate 截止日期
+     * @param userName 用户名字
      * @return 操作结果
      */
     @PostMapping("/search")
