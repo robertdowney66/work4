@@ -3,6 +3,10 @@
 
 [接口文档](https://apifox.com/apidoc/shared-0d2df84b-f7ac-4398-bdcf-78027d357195)
 
+## 预留账号密码
+testman
+1234
+
 ## 项目结构图
 ```
 └─src
