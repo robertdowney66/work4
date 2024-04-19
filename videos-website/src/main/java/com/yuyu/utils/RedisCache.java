@@ -1,5 +1,6 @@
 package com.yuyu.utils;
 
+import com.yuyu.pojo.DO.Dialogue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;
@@ -181,8 +182,18 @@ public class RedisCache
     }
 
     /**
+     * 将新数据存入List中
+     * @param key 存储的键
+     * @param data 数据
+     * @param <T> 泛型方法
+     */
+    public <T> void addCacheList(final String key, final T data)
+    {
+        redisTemplate.opsForList().rightPush(key,data);
+    }
+
+    /**
      * 缓存List数据
-     *
      * @param key 缓存的键值
      * @param dataList 待缓存的List数据
      * @return 缓存的对象
@@ -205,14 +216,34 @@ public class RedisCache
     }
 
     /**
+     * 用于向原来集合中添加元素
+     * @param key redis中的键名
+     * @param addObject 要加入的数据
+     */
+    public <T> void addCacheSet(final String key, final T addObject){
+        redisTemplate.opsForSet().add(key,addObject);
+    }
+
+    /**
+     * 用于替换原来集合中的旧元素
+     * @param key redis中的键名
+     * @param dialogue
+     * @param primitive
+     */
+    public <T> void replaceCacheSet(final String key,final T dialogue,final T primitive){
+        redisTemplate.opsForSet().remove(key,primitive);
+        redisTemplate.opsForSet().add(key,dialogue);
+    }
+
+    /**
      * 缓存Set
-     *
      * @param key 缓存键值
      * @param dataSet 缓存的数据
      * @return 缓存数据的对象
      */
     public <T> BoundSetOperations<String, T> setCacheSet(final String key, final Set<T> dataSet)
     {
+
         BoundSetOperations<String, T> setOperation = redisTemplate.boundSetOps(key);
         Iterator<T> it = dataSet.iterator();
         while (it.hasNext())

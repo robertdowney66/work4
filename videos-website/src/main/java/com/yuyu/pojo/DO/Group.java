@@ -12,17 +12,11 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("`like`")
-/**
- * 对应数据库中的like表，用于like表数据的封装和传输
- */
-public class Like implements Serializable {
-    private static final long serialVersionUID = -54979046664113736L;
-
+@TableName("`group`")
+public class Group implements Serializable {
+    private static final long serialVersionUID = -54945646664113736L;
     @TableId(type = IdType.AUTO)
-    private Long id;
-
-    private Long videoId;
-    private Long commentId;
-    private Long userId;
+    private String id;
+    private String name;
+    private String builderId;
 }

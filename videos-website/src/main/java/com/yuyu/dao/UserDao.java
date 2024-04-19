@@ -3,7 +3,6 @@ package com.yuyu.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.yuyu.pojo.DO.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 @Mapper
 /**

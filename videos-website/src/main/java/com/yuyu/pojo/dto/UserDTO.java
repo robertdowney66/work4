@@ -1,4 +1,4 @@
-package com.yuyu.pojo.DTO;
+package com.yuyu.pojo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

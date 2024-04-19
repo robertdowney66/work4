@@ -1,6 +1,5 @@
 package com.yuyu.scheduled;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.yuyu.dao.CommentDao;
 import com.yuyu.dao.UserDao;
 import com.yuyu.dao.VideoDao;
@@ -13,8 +12,6 @@ import org.springframework.data.redis.core.DefaultTypedTuple;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Map;

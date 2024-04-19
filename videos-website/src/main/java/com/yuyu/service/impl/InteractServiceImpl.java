@@ -19,7 +19,6 @@ import com.yuyu.service.InteractService;
 import com.yuyu.utils.RedisCache;
 import com.yuyu.utils.ServiceUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.core.RedisOperations;

@@ -1,7 +1,6 @@
 package com.yuyu.service.impl;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.yuyu.dao.UserDao;
 import com.yuyu.exception.BussinessException;
@@ -25,13 +24,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.security.CodeSigner;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.UUID;
 
 @Service
 @Slf4j

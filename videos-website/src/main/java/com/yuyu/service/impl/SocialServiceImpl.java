@@ -8,16 +8,14 @@ import com.yuyu.dao.UserDao;
 import com.yuyu.dao.UserFanDao;
 import com.yuyu.exception.BussinessException;
 import com.yuyu.exception.Code;
-import com.yuyu.exception.SystemException;
 import com.yuyu.pojo.*;
 import com.yuyu.pojo.DO.User;
 import com.yuyu.pojo.DO.UserFan;
-import com.yuyu.pojo.DTO.UserDTO;
+import com.yuyu.pojo.dto.UserDTO;
 import com.yuyu.service.SocialService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
